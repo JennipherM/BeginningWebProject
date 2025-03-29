@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="styles/cabins.css" rel="stylesheet">
   <meta name="description" content="To launch yourself to a whole new experience, contact The Extraterrestrial Cabins today!">
+
+  <script src = "script.js" defer></script>
+
 </head>
 
 <body>
@@ -43,6 +46,12 @@
 		
 	  <label for="email">E-mail: </label>
 	  <input type="text" name="email" id="email" required>
+
+	  <label for="guests">Number of Guests: <br>($10 per person for groups of 6+)</label>
+	  <input type="text" name="guests" id="guests" required>
+
+	  <label for="days">Number of Days: <br>(5% for 5-10 days; 10% for 11+ days)</label>
+	  <input type="text" name="days" id="days" required>
 		
 	  <label>Choose your preferred cabin: </label>
 	  <select>
@@ -53,6 +62,9 @@
 		
 	  <label for="questions">Questions or comments: </label>
 	  <textarea name="questions" id="questions" rows="3" cols="5"></textarea><br>
+
+	  <p id="total"></p>
+
 	  <input type="submit" value="Launch">
 	</form>	
 	
