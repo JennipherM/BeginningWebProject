@@ -166,7 +166,7 @@ form {
 	display: flex;
 	flex-direction: column;
 	width: 50%;
-	padding: 10px 30px;
+	padding: 0px 30px;
 }
 input[type=submit] {
 	width: 50%;
@@ -184,6 +184,20 @@ label {
 	font-size: 16px;
 	font-weight: bold;
 	color: #06154e;
+}
+/*Style for total $ amount*/
+#total{
+	font-family: Courier New, Lucida Sans Unicode, sans-serif;
+	padding-left: 35px;
+	padding-top: 0px;
+	margin-top: 5px;
+	color: #06154e;
+	font-size: 18px;
+}
+/*Style for launch button*/
+#btn{
+	margin-left: 35px;
+	padding-top: 0px;
 }
 
 /*Styles for Footer*/
@@ -299,6 +313,7 @@ table {
 	margin-right: 15px;
 }
 form { margin-left: 20px; }
+#total { margin-left: 20px; } 
 footer { margin-bottom: 20px; }
 }
 
