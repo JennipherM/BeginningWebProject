@@ -93,7 +93,7 @@ function CalculateTotal() {
 function checkValues(e) {
 
     //sets the reg ex to find if "gmail" is in the email
-    let pattern = /gmail/;
+    let pattern = /^gmail/;
 
     //gets the value of user email
     let userEmail = document.getElementById("email").value;
