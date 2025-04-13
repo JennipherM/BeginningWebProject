@@ -7,9 +7,7 @@ let numGuests;
 
 //finds the element with the specified id,add an onchange event and when that element changes, send to called function
 document.getElementById("days").onchange = checkForDiscount;
-
 document.getElementById("guests").onchange = checkForFee;
-
 document.getElementById("btn").onclick = checkValues;
 
 
@@ -92,16 +90,52 @@ function CalculateTotal() {
 }
 
 //creates a function to check if days and guests are valid when the user presses the submit button
-function checkValues() {
-    numDays = parseInt(document.getElementById("days").value);
-    numGuests = parseInt(document.getElementById("guests").value);
+function checkValues(e) {
 
+    //sets the reg ex to find if "gmail" is in the email
+    let pattern = /gmail/;
+
+    //gets the value of user email
+    let userEmail = document.getElementById("email").value;
+    //gets the element by its id
+    let email = document.getElementById("email")
+
+    //splits the email into two parts at the @ sign (not including the @)
+    let splitEmail = userEmail.split("@");
+    //tests if the email domain matches the pattern 
+    let testEmail = pattern.test(splitEmail[1]);
+
+    //checks if the match was true
+    if(testEmail == true)
+    {
+        //sets a custom error message
+        email.setCustomValidity("Enter a non gmail email.");
+        //shows the error to the user
+        email.reportValidity()
+
+        //stops the form from submitting
+        e.preventDefault() 
+    }
+    //runs if the email is valid
+    else{
+        //sets the error to empty
+        email.setCustomValidity("");
+
+        ///gets the user values of days and guests
+        numDays = parseInt(document.getElementById("days").value);
+        numGuests = parseInt(document.getElementById("guests").value);
+
+        //checks if the values are valid
         try {
             if (numDays < 1 || numGuests < 1) throw "Please enter valid values";
         }
         //catches any errors
         catch (err) {
             //creates a pop up window saying to enter a valid number
-            window.alert("Please enter valid values");            
+            window.alert("Please enter valid values"); 
+
+            //stops the form from submitting
+            e.preventDefault()          
         } 
+    }
 }
