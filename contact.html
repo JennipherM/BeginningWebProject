@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="styles/cabins.css" rel="stylesheet">
   <meta name="description" content="To launch yourself to a whole new experience, contact The Extraterrestrial Cabins today!">
-
+ 
   <script src = "script/objects.js" defer></script>
   <script src = "script/script.js" defer></script>
+  <script src = "script/map.js" defer></script>
+  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyA4-a0-Cky31xCiqy6oty-oRzoZDxLqg&callback=initMap"></script>
   
-
 </head>
 
 <body>
@@ -70,6 +71,9 @@
 	  <p id="total"></p>
 	  
 	<img src="images/wave.png" alt="Alien waving saying 'hope to see you soon'" class="alien hide1" height="375" width="350"><br class="clear">
+
+	<div id="displayMap"></div>
+	<div id="routeBox"></div>
   </main>
   
   <!--Footer Section-->

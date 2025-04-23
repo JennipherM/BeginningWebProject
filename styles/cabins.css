@@ -20,6 +20,16 @@ p {
 .spacing { margin-bottom: 40px; }
 .color { background-color: #a4cc92; }
 
+/*Style for map div*/
+
+#displayMap{
+	height: 350px;
+	width: 300px;
+	margin-left: 100px;
+	margin-bottom: 20px;
+}
+
+
 /*Styles and class for headings*/
 header {
 	background-image: url(../images/space.jpg);
