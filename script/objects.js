@@ -1,4 +1,46 @@
+//object for the homepage
 
+//creates a function constructor
+function Gallery(){
+    //assigns height and width for all the pictures 
+    this.height= "640";
+    this.width = "640";
+}
+//creates an arrray of all the images and the alt text
+let imageArray = [
+    {src: "images/trail2.jpg", alt: "Hiking trail in a forest" },
+    {src: "images/river.jpg", alt: "River in a forest"},
+    {src: "images/moose.jpg", alt: "A moose in a forest"},
+    {src: "images/elk.jpg", alt: "An elk in a forest"},
+    {src: "images/bird.jpg", alt: "An eagle flying above trees"},
+    {src: "images/fox.jpg", alt: "A fox in a forest"},
+    {src: "images/bunny.jpg", alt: "A rabbit in a forest"}
+]
+//creates a method to the Gallery function
+Gallery.prototype.showImgs = function(){
+    //gets element by its id and assigns it to htmlCode
+    let htmlCode = document.getElementById("slideshow");
+
+    //loops through all the element in the array
+    for(let i = 0;i<imageArray.length;i++)
+    {
+        //assigns the html of the element to each img tag
+        htmlCode.innerHTML += `<img src='${imageArray[i].src}' alt='${imageArray[i].alt}' height='${this.height}' width='${this.width}'/>`; 
+    }
+
+}
+//creates an object for Gallery
+let images = new Gallery();
+//calls the showImgs method 
+images.showImgs();
+
+
+
+
+
+//From case project 5 -- I wasn't sure if I should delete or not
+
+/*
 //function to check if user numbers are valid
 function checkNumbers(number)
 {
@@ -138,3 +180,4 @@ checkGuests.prototype.checkForFees= function(){
     //sends to the calculate method
    calculateTotal();
 }
+*/

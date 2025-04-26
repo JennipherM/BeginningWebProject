@@ -23,10 +23,9 @@ p {
 /*Style for map div*/
 
 #displayMap{
-	height: 350px;
-	width: 300px;
-	margin-left: 100px;
-	margin-bottom: 20px;
+	height: 400px;
+	width: 400px;
+	margin-bottom: 40px;
 }
 
 
@@ -208,7 +207,9 @@ label {
 #btn{
 	margin-left: 35px;
 	padding-top: 0px;
+	float: none;
 }
+
 
 /*Styles for Footer*/
 footer { 
@@ -233,6 +234,8 @@ main {
 	font-size: 17px;
 	display: block;
 	padding-top: 25px;
+	padding-left: 20px; 
+	padding-right: 20px;
 }
 p { 
 	font-size: 17px;
@@ -333,9 +336,20 @@ footer { margin-bottom: 20px; }
 body { margin: 0 40px 10px 40px; }
 
 	/*Main*/
-main { box-shadow: 4px 4px 4px #95ff00; }
+main { 
+	box-shadow: 4px 4px 4px #95ff00;
+	margin-right: 125px;
+	margin-left:125px;
+	overflow:hidden;
+}
+
+
 .spacing { margin-bottom: 50px; }
+
 p { padding: 0 30px; }
+
+nav{margin-right: 125px;
+	margin-left:125px;}
 
 	/*Header + Headings*/
 header { background-image: none; }
@@ -360,7 +374,9 @@ h2 {
 	margin-top: 55px;
 }
 	/*Nav*/
-nav ul { font-size: 1.8em; }
+nav ul { font-size: 1.8em;
+padding-top: 15px;
+padding-bottom: 15px; }
 
 	/*Lists*/
 .listb { float: left; }
@@ -404,6 +420,7 @@ img {
 	float: left;
 	margin: 15px 20px 10px 10px;
 } 
+
 	/*Table*/
 table { margin-left: 30px; }
 
@@ -420,6 +437,46 @@ label {
 	font-size: 18px;
 	letter-spacing: .5px;
 }
+
+/*Style for map*/
+ #displayMap{
+	height: 500px;
+	width: 500px;
+	margin-left: 100px;
+	margin-right: 200px;
+	border: 4px solid #06154e;
+} 
+
 	/*Footer*/
-footer { box-shadow: 4px 4px 4px #95ff00; }
+footer { box-shadow: 4px 4px 4px #95ff00;
+	margin-right: 125px;
+	margin-left:125px; }
+}
+
+
+
+/*Styels for google maps / directions*/
+
+.adp-summary{
+	margin-left: 50px;
+}
+.adp-legal{
+	margin-left: 50px;
+}
+.adp-directions{
+	width:50%;
+	margin-left: 50px;
+	border: 4px solid #06154e;
+	font-size: 20px;
+}
+.adp-placemark{
+	width: 400px;
+	margin-left: 50px;
+}
+button{
+	max-width: 300px;
+	margin-left: 50px;
+}
+#googleMap{
+	max-width: 50%;
 }
