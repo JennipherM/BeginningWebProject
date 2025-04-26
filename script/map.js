@@ -7,8 +7,6 @@ function initMap() {
 
    //assigns coords to bnb address 
    let bnbAddress = { lat: 45.295600, lng: -117.217300}
-   //let userLocation = { lat: 35.19885112201596, lng: -101.9198548828968 }
-// let amarilloCollege = { lat: 45.295600, lng:-117.217300 };
 
    //creates an object for map
    let myMap = new google.maps.Map(displayMap, {
@@ -31,6 +29,8 @@ function initMap() {
       title: "E.T Cabins"
    });
 
+  
+
 //gets the users location
    navigator.geolocation.getCurrentPosition(getPos, handleError);
 
@@ -41,6 +41,17 @@ function initMap() {
          lat: pos.coords.latitude,
          lng: pos.coords.longitude
       }
+
+       //create a marker on the map
+   new google.maps.Marker({
+      //places the marker on the user coordinates
+      position: myPosition,
+      //puts the marker on the map
+      map: myMap,
+      //names marker You are here
+      title: "You are here"
+   });
+
       //writes the users coordinates in the console window
       console.log(myPosition);
 
