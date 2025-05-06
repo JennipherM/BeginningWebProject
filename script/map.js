@@ -29,8 +29,6 @@ function initMap() {
       title: "E.T Cabins"
    });
 
-  
-
 //gets the users location
    navigator.geolocation.getCurrentPosition(getPos, handleError);
 

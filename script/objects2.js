@@ -11,6 +11,7 @@ let labelArray = [
     {for: "lName", label: "Last Name: "},
     {for: "phone", label: "Phone Number: "},
     {for: "email", label: "E-mail: "},
+    {for: "zip", label: "Zip Code: "},
     {for: "guests", label: "Number of Guests: <br>($10 per person for groups of 6+)"},
     {for: "days", label: "Number of Days: <br>(5% for 5-10 days; 10% for 11+ days)"}
 ]
@@ -19,6 +20,7 @@ let inputArray = [
     {name: "lName", id: "lName"},
     {name: "phone", id: "phone"},
     {name: "email", id: "email"},
+    {name: "zip", id:"zip"},
     {name: "guests", id: "guests"},
     {name: "days", id: "days"},   
 ]

@@ -4,6 +4,7 @@ let fee = 0;
 let discount = 0;
 let numDays;
 let numGuests;
+let zip = document.getElementById("zip");
 
 //finds the element with the specified id,add an onchange event and when that element changes, send to called function
 document.getElementById("days").onchange = checkForDiscount;
@@ -106,18 +107,17 @@ function checkValues(e) {
     let testEmail = pattern.test(splitEmail[1]);
 
     //checks if the match was true
-    if(testEmail == true)
-    {
+    if (testEmail == true) {
         //sets a custom error message
         email.setCustomValidity("Enter a non gmail email.");
         //shows the error to the user
         email.reportValidity()
 
         //stops the form from submitting
-        e.preventDefault() 
+        e.preventDefault()
     }
     //runs if the email is valid
-    else{
+    else {
         //sets the error to empty
         email.setCustomValidity("");
 
@@ -132,17 +132,35 @@ function checkValues(e) {
         //catches any errors
         catch (err) {
             //creates a pop up window saying to enter a valid number
-            window.alert("Please enter valid values"); 
+            window.alert("Please enter valid values");
 
             //stops the form from submitting
-            e.preventDefault()          
-        } 
+            e.preventDefault()
+        }
     }
 
 }
 
+//runs as soon as the user goes off the zip input box
+zip.onblur = function () {
+    //sends request to zip url
+    fetch(`http://api.zippopotam.us/US/${zip.value}`)
 
 
+        .then(response => {
+            //checks is the response from the request is a successful number (200-299)
+            if (response.ok) {
+                //turns the json object into a usuable string
+                return response.json()
+            }
+            //runs if the response is anything other than a success or network error 
+            else {
+                return window.alert("Invalid Zip Code")
+            }
+        })
+        //runs is there is a network error
+        .catch(error => window.alert("Network error"));
+}
 
 
 
