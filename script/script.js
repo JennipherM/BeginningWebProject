@@ -9,7 +9,7 @@ let zip = document.getElementById("zip");
 //finds the element with the specified id,add an onchange event and when that element changes, send to called function
 document.getElementById("days").onchange = checkForDiscount;
 document.getElementById("guests").onchange = checkForFee;
-document.getElementById("btn").onclick = checkValues;
+
 
 
 //function to check if a discount is applied
@@ -90,16 +90,27 @@ function CalculateTotal() {
         "%<br><br> <b><u>Total Cost</u>: $" + totalCost + "</b>";
 }
 
+
+//document.getElementById("btn").onclick = checkValues;
+
 //creates a function to check if days and guests are valid when the user presses the submit button
-function checkValues(e) {
+$("#btn").click(function(e) {
 
     //sets the reg ex to find if "gmail" is in the email
     let pattern = /^gmail/;
 
+
     //gets the value of user email
-    let userEmail = document.getElementById("email").value;
+    //let userEmail = document.getElementById("email").value;
+
+    //gets the value -.val() where the id is email
+    let userEmail = $("#email").val();
+
     //gets the element by its id
-    let email = document.getElementById("email")
+   // let email = document.getElementById("email")
+
+   //gets the element with the id email
+    let email = $("#email");
 
     //splits the email into two parts at the @ sign (not including the @)
     let splitEmail = userEmail.split("@");
@@ -109,12 +120,16 @@ function checkValues(e) {
     //checks if the match was true
     if (testEmail == true) {
         //sets a custom error message
-        email.setCustomValidity("Enter a non gmail email.");
+       // email.setCustomValidity("Enter a non gmail email.");
         //shows the error to the user
-        email.reportValidity()
+       // email.reportValidity()
+       //goes to the input for email and sets the customer error message 
+       email[0].setCustomValidity("Enter a non-gmail email.");
+       email[0].reportValidity();
 
         //stops the form from submitting
         e.preventDefault()
+
     }
     //runs if the email is valid
     else {
@@ -122,12 +137,15 @@ function checkValues(e) {
         email.setCustomValidity("");
 
         ///gets the user values of days and guests
-        numDays = parseInt(document.getElementById("days").value);
-        numGuests = parseInt(document.getElementById("guests").value);
+        //numDays = parseInt(document.getElementById("days").value);
+        numDays = parseInt($("#days").val());
+        numGuests = parseInt($("#guests").val());
 
         //checks if the values are valid
         try {
+
             if (numDays < 1 || numGuests < 1) throw "Please enter valid values";
+
         }
         //catches any errors
         catch (err) {
@@ -139,7 +157,7 @@ function checkValues(e) {
         }
     }
 
-}
+})
 
 //runs as soon as the user goes off the zip input box
 zip.onblur = function () {
